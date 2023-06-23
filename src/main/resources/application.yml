@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: dev
+---
+# 开发环境
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/darhan-core?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: -1
+        max-wait: 3000ms
+    timeout: 3000ms
+server:
+  port: 10013
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+# 配置api文件路径(注意更改路径为'/')
+filepath:
+  apipath: "D:/workspace/vue_work/vue3-admin/server/api"
+params:
+  slat: ecd3dee3972dfe123724c2808daa6250
+
+---
+# 生产环境
+spring:
+  profiles: pro
+  datasource:
+    url: jdbc:mysql://localhost:3306/darhan-core?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: -1
+        max-wait: 3000ms
+    timeout: 3000ms
+server:
+  port: 10013
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+filepath:
+  apipath: D:/workspace/vue_work/vue3-admin/server/api
+params:
+  slat: ecd3dee3972dfe123724c2808daa6250
